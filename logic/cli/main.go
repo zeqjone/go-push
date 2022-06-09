@@ -1,16 +1,17 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"os"
-	"flag"
 	"runtime"
 	"time"
+
 	"github.com/owenliang/go-push/logic"
 )
 
 var (
-	confFile string		// 配置文件路径
+	confFile string // 配置文件路径
 )
 
 func initArgs() {
@@ -22,7 +23,7 @@ func initEnv() {
 	runtime.GOMAXPROCS(runtime.NumCPU())
 }
 
-func main()  {
+func main() {
 	var (
 		err error
 	)
@@ -50,8 +51,6 @@ func main()  {
 	for {
 		time.Sleep(1 * time.Second)
 	}
-
-	os.Exit(0)
 
 ERR:
 	fmt.Fprintln(os.Stderr, err)
